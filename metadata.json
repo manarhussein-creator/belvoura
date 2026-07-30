@@ -1,0 +1,6 @@
+{
+  "name": "BELVOURA",
+  "description": "Luxury women's shoes and luxury leather handbags e-commerce application",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,65 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "Boutique product catalog items",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "titleAr": { "type": "string" },
+        "titleEn": { "type": "string" },
+        "titleFr": { "type": "string" },
+        "descriptionAr": { "type": "string" },
+        "descriptionEn": { "type": "string" },
+        "descriptionFr": { "type": "string" },
+        "priceUSD": { "type": "number" },
+        "category": { "type": "string" },
+        "image": { "type": "string" },
+        "secondaryImage": { "type": "string" },
+        "badgeAr": { "type": "string" },
+        "badgeEn": { "type": "string" },
+        "badgeFr": { "type": "string" },
+        "colors": { "type": "array" },
+        "sizes": { "type": "array" },
+        "stock": { "type": "number" },
+        "featured": { "type": "boolean" },
+        "isNewArrival": { "type": "boolean" },
+        "craftsmanshipNotesAr": { "type": "string" },
+        "craftsmanshipNotesEn": { "type": "string" },
+        "craftsmanshipNotesFr": { "type": "string" }
+      },
+      "required": ["id", "titleAr", "priceUSD", "category", "image"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer store orders",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "items": { "type": "array" },
+        "totalUSD": { "type": "number" },
+        "currencyCode": { "type": "string" },
+        "customerInfo": { "type": "object" },
+        "paymentMethod": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "products/{productId}": {
+      "entity": "Product",
+      "read": "true",
+      "write": "true"
+    },
+    "orders/{orderId}": {
+      "entity": "Order",
+      "read": "true",
+      "write": "true"
+    },
+    "config/{configId}": {
+      "read": "true",
+      "write": "true"
+    }
+  }
+}
